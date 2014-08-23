@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="build/styles.min.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="year">1960</div>
+      <div id="map"></div>
+      <div id="controls">
+        <div id="description"><span id="crime-type"></span> per 100,000 people. Use the slider to move through time.</div>
+        <input type="range" id="weee" min=0 max=50 value=0>
+      </div>
+      <div id="credits">
+        Raw data downloaded from <a href="http://www.ucrdatatool.gov/Search/Crime/State/TrendsInOneVar.cfm">Department of Justice</a>.
+      </div>
+      <div id="tip"></div>
+    </div>
+    <script src="build/crime.min.js"></script>
+  </body>
+</html>
