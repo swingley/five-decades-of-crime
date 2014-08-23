@@ -5,4 +5,4 @@ Visualization of occurrences of various types of crime by state over five decade
 
 [Explore the data](http://swingley.github.io/five-decades-of-crime/built.html).
 
-![map-of-crime-data](https://raw.github.com/Esri/quickstart-map-js/master/quickstart-map-js.png)
+![map-of-crime-data](https://raw.githubusercontent.com/swingley/five-decades-of-crime/master/crime-map.png)
