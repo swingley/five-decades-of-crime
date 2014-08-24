@@ -91,7 +91,10 @@
         .attr("d", path);
     // Show info on mouse over.
     states.on("mouseenter", function(e) {
-      var info = e.properties.name + ": " + this.dataset["stat"];
+      // Firefox doesn't implement dataset on svg elements:
+      // https://bugzilla.mozilla.org/show_bug.cgi?id=921834
+      var stat = this.getAttribute("data-stat");
+      var info = e.properties.name + ": " + stat;
       var rect = this.getBoundingClientRect();
       var style = { 
         "display": "block", 
@@ -99,7 +102,7 @@
         "top": (rect.top - 30) + "px"
       };
       tip.style(style)
-        .text(e.properties.name + ": " + d3.round(this.dataset["stat"]) + " per 100k people.")
+        .text(e.properties.name + ": " + d3.round(stat) + " per 100k people.")
     });
     // Hide info on mouse out.
     states.on("mouseleave", function(e) {
