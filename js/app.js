@@ -4,7 +4,7 @@
     "burglary": "estimated-burglary-rate",
     "rape": "estimated-forcible-rape-rate",
     "larceny": "estimated-larceny-theft-rate",
-    "vechicle-theft": "estimated-motor-vehicle-theft-rate",
+    "vehicle-theft": "estimated-motor-vehicle-theft-rate",
     "murder": "estimated-murder-rate",
     "property-crime": "estimated-property-crime-rate",
     "robbery": "estimated-robbery-rate",
