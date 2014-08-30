@@ -34,7 +34,7 @@ After including the [necessary libraries](../../blob/master/dev.html#L20-22), ge
 
 The code before the `queue` call in [app.js](../../blob/master/js/app.js) sets up an SVG element where the map will live as well as a select element that allows a visitor to change the type of crime shown on the map.
 
-Once the data loads, the `show` function runs. This is where the states are drawn on the map and the stats for the current crime type are [joined](http://bost.ocks.org/mike/join/) to the associated states. To produce a map that's easy to understand, I used d3's [quantize scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize-scales) to translate individual crime stats to categories ranging from low to high crime. When drawn on the map, areas of low crime are shown as a light peach color and high crime areas are dark red. The darker the red, the higher the crime. Colors were chosen using [ColorBrewer](http://colorbrewer2.org/). 
+Once the data loads, the [`show`](../../blob/master/js/app.js#L63) function runs. This is where the states are drawn on the map and the stats for the current crime type are [joined](http://bost.ocks.org/mike/join/) to the associated states. To produce a map that's easy to understand, I used d3's [quantize scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#quantize-scales) to translate individual crime stats to categories ranging from low to high crime. When drawn on the map, areas of low crime are shown as a light peach color and high crime areas are dark red. The darker the red, the higher the crime. Colors were chosen using [ColorBrewer](http://colorbrewer2.org/). 
 
 ###Add a slider
 Now that there's a map (specifically a [choropleth map](http://en.wikipedia.org/wiki/Choropleth_map)), the next goal was to hook up a slider. The obvious choice is an [input element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input) with `type=range` that allows visitors to scrub through the data. To make the temporal navigation work, [select the slider](../../blob/master/js/app.js#L132) and add an event listener to update the data when the slider thumb changes position. The [`change` function](../../blob/master/js/app.js#L214-218) handles updating the data. I also [tweaked the size and look of the slider with some css](../../blob/master/css/styles.css#L88-113) and used a [media query to make it more touch friendly (bigger thumb) on iOS devices](../../blob/master/css/styles.css#L115-142). 
@@ -42,7 +42,7 @@ Now that there's a map (specifically a [choropleth map](http://en.wikipedia.org/
 At this point, I'd satisfied my initial goal and I set this project aside. Upon re-visiting a couple days later, I decided it needed a couple more things if I wanted to show it off.
 
 ###More interaction
-Because we're on the web, interaction and live feedback is expected. Up to this point, the map provided a good general picture of crime rates over time and how one state compared to another but it was lacking an easy way to get exact information about a particular state. The easy solution is to add a popup or tip to show info about a feature as the mouse cursor moves over it. 
+Because we're on the web, interaction and live feedback are expected. Up to this point, the map provided a good general picture of crime rates over time and how one state compared to another but it was lacking an easy way to get exact information about a particular state. The easy solution is to add a popup or tip to show info about a feature as the mouse cursor moves over it. 
 
 To add a map tip, I used a [`div`](../../blob/master/dev.html#L18) and couple of events ([`mouseenter`](../../blob/master/js/app.js#L93) and [`mouseleave`](../../blob/master/js/app.js#L108)) to show info about a feature under the cursor. 
 
@@ -53,8 +53,6 @@ The final component I wanted for the map was a legend. I looked around for an ex
 Once I made the jump from mapping a single type of crime to providing a way to switch between crime types, I wanted a way to persist the last type of crime mapped. That way, if you wanted to send someone directly to the map for vehicle theft, you could. 
 
 I implemented this by adding the current crime type to the page hash. This happens in [app.js online 30](../../blob/master/js/app.js#L30).
-
-But before talking about how that works, With data on the map, it's time to take advantage of the dynamic best to categorize d3 provides tools to easily map a set of values to The result is a . 
 
 ###Grunt
 Once I was happen with the functionality, I decided I should bundle up the javascript libraries as well as the javascript I wrote into a single file and that I should minify the CSS. [Grunt](http://gruntjs.com/) along with [uglify](https://github.com/gruntjs/grunt-contrib-uglify) and [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin) were the obvious choices. The output from that build process is what you see when you [visit the map on github pages](http://swingley.github.io/five-decades-of-crime/built.html). 
