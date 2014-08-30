@@ -52,10 +52,10 @@ The final component I wanted for the map was a legend. I looked around for an ex
 ###Linking
 Once I made the jump from mapping a single type of crime to providing a way to switch between crime types, I wanted a way to persist the last type of crime mapped. That way, if you wanted to send someone directly to the map for vehicle theft, you could. 
 
-I implemented this by adding the current crime type to the page hash. This happens in [app.js online 30](../../blob/master/js/app.js#L30).
+I implemented this by adding the current crime type to the page hash. This happens in [app.js on line 30](../../blob/master/js/app.js#L30).
 
 ###Grunt
-Once I was happen with the functionality, I decided I should bundle up the javascript libraries as well as the javascript I wrote into a single file and that I should minify the CSS. [Grunt](http://gruntjs.com/) along with [uglify](https://github.com/gruntjs/grunt-contrib-uglify) and [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin) were the obvious choices. The output from that build process is what you see when you [visit the map on github pages](http://swingley.github.io/five-decades-of-crime/built.html). 
+Once I was happy with the functionality, I decided I should bundle up the javascript libraries as well as the javascript I wrote into a single file and that I should minify the CSS. [Grunt](http://gruntjs.com/) along with [uglify](https://github.com/gruntjs/grunt-contrib-uglify) and [cssmin](https://github.com/gruntjs/grunt-contrib-cssmin) were the obvious choices. The output from that build process is what you see when you [visit the map on github pages](http://swingley.github.io/five-decades-of-crime/built.html). 
 
 ###Future
 I'm tempted to continue work on this but not sure if I'll make the time to do it. I'd really like to see what crime patterns look like over time for the smaller geographies available from [ucrdatatool.gov](http://www.ucrdatatool.gov). If I do end up doing that, I'll be sure to push it up to this repo. If you made it this far, hat's off to you!
