@@ -99,7 +99,7 @@
       var style = { 
         "display": "block", 
         "left": rect.left + "px",
-        "top": (rect.top - 30) + "px"
+        "top": (rect.top - 30) + document.body.scrollTop + "px"
       };
       tip.style(style)
         .text(e.properties.name + ": " + d3.round(stat) + " per 100k people.")
